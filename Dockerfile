@@ -31,11 +31,14 @@ ENV C_INCLUDE_PATH=/usr/include/gdal
 RUN gem install sqlite3 json Text
 
 RUN mkdir /root/geocoder
+RUN mkdir /root/geocoder/tmp
 WORKDIR /root/geocoder
 
 COPY Makefile.ruby .
 COPY app.R .
-COPY tract_mapping.R .
+COPY mappp_Shiny.R .
+COPY tract_mapping_Shiny.R .
+COPY geocode_Shiny.R .
 
 COPY /src ./src
 COPY /lib ./lib
@@ -62,13 +65,20 @@ COPY renv.lock .
 RUN R --quiet -e "renv::restore(repos = c(CRAN = 'https://packagemanager.rstudio.com/all/__linux__/focal/latest'), \
                                 rebuild = c('rgeos', 'rgdal'))"
 
+RUN R --quiet -e "install.packages('Rcpp')"
+RUN R --quiet -e "install.packages('httpuv')"
+RUN R --quiet -e "install.packages('shiny')"
+
 #deal with shared object aliases for rgdal and rgeos
 #RUN R --quiet -e "install.packages('devtools', repos = 'https://packagemanager.rstudio.com/all/__linux__/focal/latest')"
 #RUN R --quiet -e "devtools::install_version('rgdal', version = '1.5.23')"
 #RUN R --quiet -e "devtools::install_version('rgeos', version = '0.5.5')"
 
-
-COPY geocode.R .
 COPY geocode.rb .
 
-ENTRYPOINT ["./geocode.R"]
+# select port
+EXPOSE 3838
+
+#ENTRYPOINT ["./geocode.R"]
+
+ENTRYPOINT R -e 'shiny::runApp("app.R",port = 3838, host = "0.0.0.0")'
