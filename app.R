@@ -229,7 +229,7 @@ server <- function(input, output, session) {
       if(!(rvs$activateFinal)) rvs$activateFinal = file.exists('process_done')
     }
   }) 
-  
+  session$onSessionEnded(function() {q()}) #stop app on browser window close
 }
 
 shinyApp(ui, server)
