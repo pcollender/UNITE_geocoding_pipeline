@@ -8,7 +8,9 @@
 
 - Docker desktop (must be running in background before calling the pipeline! Install instructions for [Windows](https://docs.docker.com/docker-for-windows/install/) & [Mac](https://docs.docker.com/docker-for-mac/install/))
 - Web browser (used to navigate to port on local machine, internet connection is not required)
-- Input files should contain an address column with full addresses present in the format **\<Street Address\> \<City\> \<Zip Code\> \<State\>**, separated by single spaces, as described in the [DeGAUSS documentation](https://degauss.org/geocoder/)
+- Input files should contain an address column with full addresses present in the format described in the [DeGAUSS documentation](https://degauss.org/geocoder/)
+	- **\<Street Address\> \<City\> \<Zip Code\> \<State\>** 
+		- Separated by single spaces
 	- Do not include apartment numbers or second address lines
 	- Zip codes should be 5 digits, without "plus four" digits
 	- User Arabic numerals instead of written numbers
