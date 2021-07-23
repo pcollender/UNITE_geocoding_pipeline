@@ -229,7 +229,17 @@ server <- function(input, output, session) {
       if(!(rvs$activateFinal)) rvs$activateFinal = file.exists('process_done')
     }
   }) 
-  session$onSessionEnded(function() {q()}) #stop app on browser window close
+  session$onSessionEnded(function() {
+    file.remove('pb1_stats')
+    file.remove('active2')
+    file.remove('active3')
+    file.remove('temp.csv')
+    file.remove('process_done')
+    file.remove('temp_geocoded_v3.0.csv')
+    file.remove('tstream1')
+    file.remove('tstream2')
+    file.remove('summarytable')
+    q()}) #stop app on browser window close
 }
 
 shinyApp(ui, server)
