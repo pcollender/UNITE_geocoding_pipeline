@@ -8,7 +8,7 @@
 
 - Docker desktop (must be running in background before calling the pipeline! Install instructions for [Windows](https://docs.docker.com/docker-for-windows/install/) & [Mac](https://docs.docker.com/docker-for-mac/install/))
 - Web browser (used to navigate to port on local machine, internet connection is not required)
-- Input files should contain an address column with full addresses present in the format "<street address> <city> <zip code> <state>", as described in the [DeGAUSS documentation](https://degauss.org/geocoder/)
+- Input files should contain an address column with full addresses present in the format **\<Street Address\> \<City\> \<Zip Code\> \<State\>**, separated by single spaces, as described in the [DeGAUSS documentation](https://degauss.org/geocoder/)
 	- Do not include apartment numbers or second address lines
 	- Zip codes should be 5 digits, without "plus four" digits
 	- User Arabic numerals instead of written numbers
@@ -18,4 +18,4 @@
 - Developed as a GUI to use the [DeGAUSS v 3.0](https://github.com/degauss-org/geocoder) offline geocoder to map California addresses to Census Tracts
 - Operates using an R Shiny backend to render GUI, call geocoding scripts, and map addresses to 2000, 2010, and 2020 census tracts
 - Clickable scripts to run the pipeline on Windows or Mac are available in the directory [exec files/](https://github.com/pcollender/UNITE_geocoding_pipeline/tree/main/exec%20files
-- Detailed walkthrough of use of the pipeline is present in ReadMe.pdf
+- Detailed walkthrough of use of the pipeline is present in [ReadMe.pdf](https://github.com/pcollender/UNITE_geocoding_pipeline/blob/main/ReadMe.pdf)
