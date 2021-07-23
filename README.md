@@ -19,6 +19,6 @@
 
 - Developed as a GUI to use the [DeGAUSS v 3.0](https://github.com/degauss-org/geocoder) offline geocoder to map California addresses to Census Tracts
 - Operates using an R Shiny backend to render GUI, call geocoding scripts, and map addresses to 2000, 2010, and 2020 census tracts
-- Clickable scripts to run the pipeline on Windows or Mac are available in the directory [exec files/](https://github.com/pcollender/UNITE_geocoding_pipeline/tree/main/exec%20files
+- Clickable scripts to run the pipeline on Windows or Mac are available in the directory [exec files/](https://github.com/pcollender/UNITE_geocoding_pipeline/tree/main/exec%20files)
 - While the app is designed to be fairly intuitive to use, a detailed walkthrough of the pipeline is present in [ReadMe.pdf](https://github.com/pcollender/UNITE_geocoding_pipeline/blob/main/ReadMe.pdf)
 - All executable files, the detailed ReadMe.pdf, and an example dataset are packaged in [UNITE_Geocoding_Pipeline.zip](https://github.com/pcollender/UNITE_geocoding_pipeline/blob/main/UNITE_Geocoding_Pipeline.zip)
